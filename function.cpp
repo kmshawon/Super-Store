@@ -13,7 +13,7 @@ void mySuperStore() {
 
 }
 void Display(){
-    
+    system("clear");
     cout<<"\t\t\t\t Welcome to Goriber Store\t\t\t\t\t\n";
     cout<<"\t-------------------------------------------------------------------------------------------------------------------------\n";
     cout<<"\t|                                                                                                                        |\n";
@@ -42,14 +42,14 @@ void Display(){
 }
 int Choice_Display(){
     short int choice_Display;
-       system("cls");
+    
     cout<<"\t-------------------------------------------------------------------------------------------------------------------------\n";
     cout<<"\t|                                                                                                                        |\n";
     cout<<"\t| Enter Your choice>> ";cin>>choice_Display;
     return choice_Display;
 }
 void Customer_Login_Display(){
-    system("cls");
+    system("clear");
     cout<<"\t\t\t\t Welcome to User Login Page\t\t\t\t\t\n";
     cout<<"\t-------------------------------------------------------------------------------------------------------------------------\n";
     cout<<"\t|                                                                                                                        |\n";

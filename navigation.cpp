@@ -10,7 +10,7 @@ using namespace std;
 
 void mainDisplay(short int n)
 {
-    system("cls");
+   system("clear");
     switch (n)
     {
     case 1:
