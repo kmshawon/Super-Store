@@ -5,32 +5,6 @@
 #include "header.h"
 using namespace std;
 
-// void shopping::buyer()
-// {
-// buyer_manu:
-//     system("clear");
-//     int choice;
-//     cout << "\t\t\t\t Buyer P\t\t\t\t\t\n";
-//     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-//     cout << "\t|                                                                                                                        |\n";
-//     cout << "\t|       1) Buy Product                                                                                                   |\n";
-//     cout << "\t|       2) go Back                                                                                                       |\n";
-//     cout << "\t|       Enter Your Choice                                                                                                |\n";
-//     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-//     cin >> choice;
-//     switch (choice)
-//     {
-//     case 1:
-//         receipt();
-//         break;
-//     case 2:
-//         menu();
-//         break;
-//     default:
-//         cout << "Envalide choicee\n";
-//     }
-//     goto buyer_manu;
-// }
 void shopping ::menu()
 {
 main_manu:
@@ -38,7 +12,7 @@ main_manu:
     string email;
     string password;
 
-    system("clear");
+    system("clear");//if you are windows User please use system("cls");
     cout << "\t\t\t\t Welcome to Goriber Store\t\t\t\t\t\n";
     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
     cout << "\t|                                                                                                                        |\n";
@@ -87,7 +61,7 @@ main_manu:
     }
     case 2:
     {
-        buyer();
+        Customer_Login_Display();
     }
     case 3:
     {
@@ -101,60 +75,6 @@ main_manu:
     goto main_manu;
 }
 
-void shopping::adminstrator()
-{
-adminstrator:
-    int choice;
-    system("clear");
-    cout << "\t\t\t\t Welcome to Admin  Page\t\t\t\t\t\n";
-    cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|     1>>Add the Product                                                                                                 |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|     2>>Modify the Product                                                                                              |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|     3>>Delete the Product                                                                                              |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|     4>>Exit to Main manu                                                                                               |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t|                                                                                                                        |\n";
-    cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-    cin >> choice;
-    cout << "\t|       Entert Your choice                                                                                             |\n";
-    switch (choice)
-    {
-    case 1:
-        add();
-        /* code */
-        break;
-    case 2:
-        edit();
-        /* code */
-        break;
-    case 3:
-        rem();
-        /* code */
-        break;
-    case 4:
-        menu();
-        /* code */
-        break;
-    default:
-        cout << "Envalide choicee\n";
-    }
-    goto adminstrator;
-}
 
 void shopping::buyer()
 {
@@ -175,7 +95,7 @@ buyer_manu:
         receipt();
         break;
     case 2:
-        menu();
+        Customer_Login_Display();
         break;
     default:
         cout << "Envalide choicee\n";
@@ -238,7 +158,10 @@ add:
         data.close();
     }
     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-    cout << "\t|        Record Inserted  !!                                                                                                |\n";
+    cout << "\t|        Record Inserted  !!                                                                                             |\n";
+    char c7;
+    cout<<"press any charecter fotr countinue....";
+    cin>>c7;
 }
 
 void shopping::edit()
@@ -279,7 +202,7 @@ void shopping::edit()
                 cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
                 cout << "\t|        Discount on the product>                                                                                        |\n";
                 cin >> d;
-                data1 << " " << p << " " << n << " " << p << " " << d << "\n";
+                data1 << " " << c << " " << n << " " << p << " " << d << "\n";
                 cout << "\t\tRecord Edited !!\n";
                 token++;
             }
@@ -354,16 +277,78 @@ void shopping::list()
     fstream data;
     data.open("database.txt", ios::in);
     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-    cout << "\t|        Product Product List>                                                                                                 |\n";
+    cout << "\t|        Product Product List>                                                                                           |\n";
     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
-    cout << "\t\t Product No |\t\t product Name  |\t\t price |\n";
+    cout << "\t\t Product No |\t\t product Name  \t\t price \t\t Discount%\n";
     data >> pCode >> pname >> price >> dis;
     while (!data.eof())
     {
-        cout << "\t\t " << pCode << " |\t\t " << pname << "  |\t\t " << price << " |\n";
+        cout << "\t\t " << pCode << " |\t\t\t\t " << pname << "  \t\t " << price << " \t\t "<<dis<<"%\n";
         data >> pCode >> pname >> price >> dis;
     }
+    
     data.close();
+}
+void shopping::adminstrator()
+{
+adminstrator:
+    system("clear");//system("cls")
+    int choice;
+    cout << "\t\t\t\t Welcome to Admin  Page\t\t\t\t\t\n";
+    cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|     1>>Add the Product                                                                                                 |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|     2>>Modify the Product                                                                                              |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|     3>>Delete the Product                                                                                              |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|     4>>List of Product                                                                                                 |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|     5>>Exit to Main manu                                                                                               |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t|                                                                                                                        |\n";
+    cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
+    cin >> choice;
+    cout << "\t|       Entert Your choice                                                                                             |\n";
+    switch (choice)
+    {
+    case 1:
+        add();
+        /* code */
+        break;
+    case 2:
+        edit();
+        /* code */
+        break;
+    case 3:
+        rem();
+        /* code */
+        break;
+    case 4:
+        list();
+        char c7;
+       cout<<"press any charecter fotr countinue....";
+        cin>>c7;
+        /* code */
+        break;
+    case 5:
+        menu();
+        /* code */
+        break;
+    default:
+        cout << "Envalide choice\n";
+    }
+    goto adminstrator;
 }
 
 void shopping::receipt()
@@ -436,5 +421,98 @@ recei:
         cout << "\t|        Total Amount :  " << total << " Taka only \n";
         
     }
+     cout<<"press any charecter fotr countinue....";
    cin>>c1;
+}
+
+void shopping::Customer_Login_Display(){
+    
+    Login:
+    system("clear");
+    int choice;
+    cout<<"\t\t\t\t Welcome to User Login Page\t\t\t\t\t\n";
+    cout<<"\t-------------------------------------------------------------------------------------------------------------------------\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|     1>>Login                                                                                                           |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|     2>>Register                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|     3>>Back To main Menu                                                                                               |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|      Enter Your Choice                                                                                                 |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t|                                                                                                                        |\n";
+    cout<<"\t-------------------------------------------------------------------------------------------------------------------------\n";
+    cin>>choice;
+switch (choice)
+    {
+    case 1:
+        login();
+      //  cout<<"Login\n";
+        break;
+    case 2:
+         registration();
+
+        break;
+     case 3:
+         menu();
+
+        break;
+    default:
+    cout<<"\t\tInvalide choice\n";
+        
+    }
+    goto Login;
+}
+void shopping::login(){
+    int cnt;
+    string userid,password,id,pass;
+    cout<<"\t\t\tEnter Your username\n";
+    cin>>userid;
+     cout<<"\t\t\tPassword\n";
+     cin>>password;
+
+     ifstream input("records.txt");
+     while (input>>id>>pass)
+     {
+        if(id==userid && pass==password){
+            cnt=1;
+        }
+     }
+
+    input.close();
+    if(cnt==1){
+        cout<<"\t\t "<<userid<<" Login successfull\t";
+        buyer();
+    }
+    else{
+        cout<<"\t\t"<<"Login unsuccessfull\t";
+        cout<<"press any charecter fot countinue....";
+        char c4;
+        cin>>c4;
+    }
+}
+
+void shopping::registration(){
+    string ruserId,rpassword,rid,rpass;
+    cout<<"\t\t\tEnter the user name: \n";
+    cin>>ruserId;
+    cout<<"\t\t\tEnter the password: \n";
+    cin>>rpassword;
+
+    ofstream f1("records.txt", ios::app);
+    f1<<ruserId<<"\t"<<rpassword<<endl;
+     cout<<"\t\t\tRegistration succesfulll\n";
+
 }

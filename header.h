@@ -10,8 +10,14 @@ private:
 
 public:
     void menu();
+    //Admin
     void adminstrator();
+    //Customer
+    void Customer_Login_Display();
+    void login();
+    void registration();
     void buyer();
+    //feature
     void add();
     void edit();
     void rem();
