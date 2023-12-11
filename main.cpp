@@ -3,6 +3,8 @@
 #include <iostream>
 #include<fstream>
 #include"header.h"
+//g++ main.cpp display.cpp
+//Documents/Programming/SuperStore
 using namespace std;
 //
 

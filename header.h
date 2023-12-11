@@ -2,7 +2,7 @@
 #include<string.h>
 class shopping
 {
-public:
+private:
     int pCode;
     float price;
     float dis;

@@ -226,12 +226,15 @@ add:
     data.close();
     if (token > 0)
     {
+        cout<<"Product already Exists\npress any key to continue\n";
+        string q;
+        cin>>q;
         goto add;
     }
     else
     {
         data.open("database.txt", ios::app | ios::out);
-        data << " " << pCode << " " << pname << " " << price << " " << dis << "\n";
+        data << " " << pCode << " " << pname << " " << price << " " << dis << "\n";             
         data.close();
     }
     cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
@@ -368,7 +371,7 @@ void shopping::receipt()
 recei:
     fstream data;
     int arrc[100];
-    int arrq[100];
+    float arrq[100];
     char choice,c1;
     int c = 0;
     float amount;
@@ -383,7 +386,7 @@ recei:
     else
     {
         data.close();
-        list();
+        list();      
         cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
         cout << "\t|        Plesase place the order                                                                                         |\n";
         cout << "\t-------------------------------------------------------------------------------------------------------------------------\n";
