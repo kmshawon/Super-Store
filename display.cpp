@@ -283,7 +283,7 @@ void shopping::list()
     data >> pCode >> pname >> price >> dis;
     while (!data.eof())
     {
-        cout << "\t\t " << pCode << " |\t\t\t\t " << pname << "  \t\t " << price << " \t\t "<<dis<<"%\n";
+        cout << "\t\t " << pCode << " |\t\t\t\t" << pname <<"\t\t" << price << "\t\t"<<dis<<"%\n";
         data >> pCode >> pname >> price >> dis;
     }
     
@@ -390,7 +390,7 @@ recei:
                 }
             }
             c++;
-            cout << "\t|        Do you Want to buy  Another Product ? if yes then y else no                                                  |\n";
+            cout << "\t|        Do you Want to buy  Another Product ? if yes then y else no             ";
             cin >> choice;
 
         } while (choice == 'y' || choice == 'Y');

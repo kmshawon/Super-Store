@@ -2,3 +2,9 @@
  3 coke 25 5
  4 pyaj 120 0
  6 potato 55 0
+ 5 roshun 120 0
+ 7 Banana 8 0
+ 9 sugar 130 5
+ 10 Salt 40 0
+ 11 coffe 450 20
+ 12 Milk 90 10
